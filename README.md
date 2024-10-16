@@ -6,4 +6,3 @@ This project is a simple user registration system built with native PHP, using P
 
 - Update the email addresses and any personal information as needed.
 - Adjust any specific details according to your project needs, such as additional features, usage instructions, or dependencies.
-- composer is only for free server
