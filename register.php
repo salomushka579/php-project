@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Send a confirmation email to the user
         $loginUrl = $_ENV['APP_URL'] . '/login.php';
+        $fullname = $firstname.' '.$lastname;
         $subject = "Registration Successful";
         $message = "
             <html>
@@ -80,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <title>Registration Successful</title>
             </head>
             <body>
-                <p>Hello $firstname.' '.$lastname,</p>
+                <p>Hello $fullname,</p>
                 <p>Thank you for registering on our site.</p>
                 <p>Click the link below to login:</p>
                 <a href='$loginUrl'>Login Here</a>
@@ -100,6 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "<div class='alert alert-warning'>Registration successful, but failed to send confirmation email.</div>";
         }
+
     } else {
         // Display validation errors
         foreach ($errors as $error) {
